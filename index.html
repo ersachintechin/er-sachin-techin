@@ -3,82 +3,751 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ER Sachin Techin — simple technology guides, mobile tips, digital learning and education resources in Hindi and English.">
-<meta name="theme-color" content="#102b4e">
+<meta name="description" content="ER Sachin Techin - Learn technology, mobile tips, education and digital skills in Hindi and English.">
+<meta name="theme-color" content="#071b35">
 <title>ER Sachin Techin | Learn • Explore • Grow</title>
+
 <style>
-:root{--navy:#102b4e;--blue:#1769aa;--sky:#eaf4ff;--ink:#172437;--muted:#627187;--paper:#f7f9fc;--white:#fff;--line:#e4eaf1;--accent:#ffbd59}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
-header{background:var(--navy);color:white;position:sticky;top:0;z-index:20;box-shadow:0 5px 20px #08182b25}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:850;letter-spacing:.3px;font-size:1.12rem}.brand span{color:var(--accent)}.navlinks{display:flex;gap:22px;align-items:center;font-size:.93rem}.navlinks a:hover{color:var(--accent)}.menu{display:none;background:transparent;border:1px solid #ffffff55;color:white;padding:7px 11px;border-radius:9px;font-size:1rem}
-.hero{background:linear-gradient(120deg,#102b4e,#14558c 70%,#217eb6);color:white;padding:74px 0 66px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff25;border-radius:50%;right:-90px;top:-120px;box-shadow:0 0 0 45px #ffffff0b,0 0 0 90px #ffffff08}
-.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:35px;align-items:center;position:relative;z-index:1}.eyebrow{color:#b9ddff;font-weight:750;letter-spacing:2px;font-size:.76rem;text-transform:uppercase}.hero h1{font-size:clamp(2.25rem,6vw,4.2rem);line-height:1.08;margin:12px 0 16px;letter-spacing:-1.5px}.hero p{color:#e0edfa;max-width:610px;font-size:1.06rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:10px;font-weight:750;border:1px solid transparent;cursor:pointer}.primary{background:var(--accent);color:#172437}.secondary{border-color:#ffffff75;color:white}.hero-card{background:#ffffff12;border:1px solid #ffffff30;border-radius:22px;padding:24px;backdrop-filter:blur(5px)}.hero-card .big{font-size:3rem}.hero-card h3{margin:4px 0}.hero-card p{font-size:.9rem;margin:5px 0 0}
-section{padding:58px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:24px}.kicker{color:var(--blue);font-size:.76rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.section-head h2{font-size:clamp(1.65rem,4vw,2.25rem);margin:4px 0 0;line-height:1.2}.section-head p{color:var(--muted);margin:0;max-width:480px}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.category{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;transition:.2s}.category:hover,.post:hover{transform:translateY(-3px);box-shadow:0 12px 28px #17243712}.cat-icon{width:46px;height:46px;border-radius:13px;background:var(--sky);display:grid;place-items:center;font-size:1.45rem}.category h3{margin:12px 0 3px;font-size:1.05rem}.category p{color:var(--muted);font-size:.88rem;margin:0}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}.search{flex:1;min-width:210px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;background:white}.filter{border:1px solid var(--line);border-radius:10px;padding:10px 13px;background:white;font:inherit;color:var(--ink)}
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.post{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}.post-top{height:118px;background:linear-gradient(135deg,#d9ecff,#eff6ff);display:grid;place-items:center;font-size:2.7rem}.post-body{padding:18px;display:flex;flex-direction:column;flex:1}.tag{color:var(--blue);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px}.post h3{font-size:1.08rem;line-height:1.35;margin:8px 0}.post p{color:var(--muted);font-size:.9rem;margin:0 0 15px}.read{margin-top:auto;color:var(--blue);font-weight:800;font-size:.9rem;background:none;border:0;padding:0;text-align:left;cursor:pointer}
-.empty{grid-column:1/-1;padding:30px;text-align:center;color:var(--muted);background:white;border-radius:14px}
-.about{background:#edf5fc}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.about-box{background:white;border:1px solid var(--line);border-radius:18px;padding:24px}.about-box h3{margin-top:0}.checks{padding:0;list-style:none}.checks li{margin:10px 0}.checks li:before{content:"✓";color:#14804a;font-weight:900;margin-right:10px}
-.cta{background:var(--navy);color:white;border-radius:20px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0 0 5px}.cta p{margin:0;color:#c8d8e9}
-footer{background:#0b1d34;color:#d5e1ee;padding:30px 0;font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.foot small{color:#a9bacd}
-.modal{display:none;position:fixed;inset:0;background:#07172bd9;z-index:50;padding:18px;overflow:auto}.modal.open{display:grid;place-items:center}.modal-card{background:white;border-radius:18px;max-width:650px;width:100%;padding:26px;position:relative}.close{position:absolute;right:15px;top:12px;border:0;background:#edf2f7;border-radius:50%;width:35px;height:35px;font-size:1.2rem;cursor:pointer}.modal-card h2{padding-right:35px}.modal-card p{color:#45566b}
-@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-card{max-width:420px}.categories{grid-template-columns:repeat(2,1fr)}.posts{grid-template-columns:repeat(2,1fr)}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy);padding:18px 4%;flex-direction:column;align-items:flex-start}.navlinks.show{display:flex}.menu{display:block}.about-grid{grid-template-columns:1fr}}
-@media(max-width:540px){.hero{padding:54px 0}.posts{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.categories{gap:10px}.category{padding:15px}.cta{align-items:flex-start;flex-direction:column}section{padding:44px 0}}
+:root {
+  --navy:#071b35;
+  --blue:#1769aa;
+  --gold:#ffc66b;
+  --light:#f3f7fc;
+  --white:#fff;
+  --text:#172b43;
+  --muted:#65758a;
+}
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a { text-decoration:none; color:inherit; }
+
+.container {
+  width:92%;
+  max-width:1120px;
+  margin:auto;
+}
+
+/* HEADER */
+header {
+  background:var(--navy);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav {
+  min-height:72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:17px;
+  font-weight:900;
+}
+
+.logo-icon {
+  width:43px;
+  height:43px;
+  background:var(--gold);
+  color:var(--navy);
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  font-size:23px;
+}
+
+.logo small {
+  display:block;
+  font-size:10px;
+  color:#b8d4ef;
+  letter-spacing:2px;
+}
+
+nav {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+nav a {
+  font-size:14px;
+  font-weight:bold;
+}
+
+nav a:hover { color:var(--gold); }
+
+/* HERO */
+.hero {
+  background:linear-gradient(120deg,#071b35,#145b91);
+  color:white;
+  padding:85px 0;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  align-items:center;
+  gap:35px;
+}
+
+.label {
+  color:var(--gold);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+h1 {
+  font-size:clamp(38px,6vw,65px);
+  line-height:1.12;
+  margin:18px 0;
+}
+
+h1 span { color:var(--gold); }
+
+.hero p {
+  color:#d5e7f7;
+  max-width:600px;
+  font-size:17px;
+}
+
+.btn {
+  display:inline-block;
+  background:var(--gold);
+  color:#132942;
+  padding:13px 20px;
+  border-radius:9px;
+  font-weight:bold;
+  margin:12px 8px 0 0;
+}
+
+.btn:hover { opacity:.85; }
+
+.btn-outline {
+  border:1px solid white;
+  color:white;
+  background:transparent;
+}
+
+.hero-card {
+  background:#ffffff15;
+  border:1px solid #ffffff40;
+  padding:30px;
+  border-radius:22px;
+}
+
+.hero-card .bulb { font-size:55px; }
+
+/* COMMON */
+section { padding:65px 0; }
+
+.section-title { margin-bottom:28px; }
+
+.section-title h2 {
+  font-size:clamp(27px,4vw,38px);
+  margin:5px 0;
+}
+
+.section-title p { color:var(--muted); }
+
+.eyebrow {
+  color:var(--blue);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* CATEGORIES */
+.categories {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.category {
+  background:white;
+  padding:23px;
+  border-radius:16px;
+  border:1px solid #e1e9f2;
+  transition:.2s;
+}
+
+.category:hover {
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px #071b3515;
+}
+
+.category .icon { font-size:35px; }
+
+.category h3 { margin:8px 0 3px; }
+
+.category p {
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+/* ARTICLES */
+.articles-section { background:white; }
+
+.search-area {
+  display:flex;
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.search-area input,
+.search-area select {
+  padding:14px;
+  border:1px solid #dce5ef;
+  border-radius:9px;
+  font-size:15px;
+}
+
+.search-area input { flex:1; min-width:0; }
+
+.article-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.article {
+  border:1px solid #e1e9f2;
+  border-radius:15px;
+  overflow:hidden;
+  background:white;
+  transition:.2s;
+}
+
+.article:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px #071b3512;
+}
+
+.article-image {
+  height:130px;
+  background:linear-gradient(135deg,#dceeff,#f1f7ff);
+  display:grid;
+  place-items:center;
+  font-size:48px;
+}
+
+.article-content { padding:20px; }
+
+.tag {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.article h3 {
+  font-size:19px;
+  line-height:1.35;
+}
+
+.article p {
+  font-size:14px;
+  color:var(--muted);
+}
+
+.read-btn {
+  border:0;
+  background:none;
+  padding:10px 0 0;
+  color:var(--blue);
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* ABOUT */
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.about-card {
+  background:white;
+  border-radius:17px;
+  padding:25px;
+  border:1px solid #e1e9f2;
+}
+
+.about-card li { margin:10px 0; }
+
+/* YOUTUBE */
+.youtube {
+  background:var(--navy);
+  color:white;
+  border-radius:20px;
+  padding:35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.youtube p { color:#c6d8e9; }
+
+.youtube-btn {
+  background:#ff424d;
+  color:white;
+}
+
+/* CONTACT */
+.contact {
+  background:#e4f0fc;
+  padding:30px;
+  border-radius:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+/* FOOTER */
+footer {
+  background:#061326;
+  color:#d6e3f0;
+  padding:28px 0;
+}
+
+.footer-content {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+/* ARTICLE MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000b;
+  z-index:200;
+  padding:18px;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal.active { display:flex; }
+
+.modal-content {
+  background:white;
+  width:100%;
+  max-width:550px;
+  padding:28px;
+  border-radius:17px;
+  position:relative;
+}
+
+.close {
+  position:absolute;
+  top:12px;
+  right:15px;
+  border:0;
+  background:#eaf0f6;
+  padding:8px 13px;
+  border-radius:50%;
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:760px) {
+  .hero-grid,.about-grid { grid-template-columns:1fr; }
+  .categories { grid-template-columns:repeat(2,1fr); }
+  .article-grid { grid-template-columns:repeat(2,1fr); }
+  nav { gap:12px; }
+}
+
+@media(max-width:520px) {
+  .nav {
+    padding:12px 0;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav { gap:12px; }
+
+  .hero { padding:55px 0; }
+
+  .categories,.article-grid { grid-template-columns:1fr; }
+
+  .search-area { flex-direction:column; }
+
+  .youtube,.contact {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  section { padding:45px 0; }
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="#home">ER <span>SACHIN</span> TECHIN</a>
-  <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
-  <nav class="navlinks" id="navLinks"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#articles">Articles</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-</div></header>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">
+      <span class="logo-icon">S</span>
+      <span>ER SACHIN TECHIN
+        <small>LEARN • EXPLORE • GROW</small>
+      </span>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#articles">Articles</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="hero" id="home"><div class="wrap hero-grid">
-  <div><div class="eyebrow">Learn • Explore • Grow</div><h1>Welcome to<br>Tech World!</h1>
-  <p>Technology ko simple Hindi aur English mein samjhein. Mobile tips, digital skills, education aur useful online tools — sab ek jagah.</p>
-  <div class="actions"><a class="btn primary" href="#articles">Explore Articles →</a><a class="btn secondary" href="#categories">Browse Topics</a></div></div>
-  <div class="hero-card"><div class="big">💡</div><h3>Learn something new every day</h3><p>Simple guides. Useful knowledge. Better digital skills.</p></div>
-</div></section>
-<section id="categories"><div class="wrap">
-  <div class="section-head"><div><div class="kicker">Explore topics</div><h2>What do you want to learn?</h2></div><p>Choose a category and discover practical guides made for everyday users.</p></div>
-  <div class="categories">
-    <a class="category" href="#articles" data-pick="Technology"><div class="cat-icon">💻</div><h3>Technology</h3><p>Apps, websites and digital updates.</p></a>
-    <a class="category" href="#articles" data-pick="Mobile Tips"><div class="cat-icon">📱</div><h3>Mobile Tips</h3><p>Useful phone settings and how-tos.</p></a>
-    <a class="category" href="#articles" data-pick="Education"><div class="cat-icon">🎓</div><h3>Education</h3><p>Learning resources and study tips.</p></a>
-    <a class="category" href="#articles" data-pick="Online Tools"><div class="cat-icon">🌐</div><h3>Online Tools</h3><p>Helpful websites and productivity tools.</p></a>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="label">WELCOME TO YOUR DIGITAL WORLD</span>
+
+      <h1>
+        Technology Made
+        <span>Simple.</span>
+        Learning Made Easy.
+      </h1>
+
+      <p>
+        Learn technology, mobile tips, education and digital skills.
+        Simple guides in Hindi and English for everyone.
+      </p>
+
+      <a class="btn" href="#articles">Explore Articles →</a>
+      <a class="btn btn-outline" href="#categories">Explore Topics</a>
+    </div>
+
+    <div class="hero-card">
+      <div class="bulb">💡</div>
+      <h2>Learn Something New Every Day</h2>
+      <p>
+        Discover useful knowledge, improve your digital skills
+        and grow with technology.
+      </p>
+    </div>
   </div>
-</div></section>
-<section id="articles"><div class="wrap">
-  <div class="section-head"><div><div class="kicker">Latest learning</div><h2>Featured Articles</h2></div><p>Starter articles are examples. Replace them with your own researched posts before publishing.</p></div>
-  <div class="toolbar"><input class="search" id="searchInput" type="search" placeholder="Search articles..." aria-label="Search articles"><select class="filter" id="categoryFilter" aria-label="Filter category"><option value="All">All categories</option><option>Technology</option><option>Mobile Tips</option><option>Education</option><option>Online Tools</option></select></div>
-  <div class="posts" id="postGrid">
-    <article class="post" data-category="Mobile Tips" data-search="android phone storage mobile tips"><div class="post-top">📱</div><div class="post-body"><div class="tag">Mobile Tips</div><h3>5 simple ways to keep your Android phone organised</h3><p>Learn how to review unused apps, downloads and storage safely.</p><button class="read" data-title="5 simple ways to keep your Android phone organised" data-content="Start by checking Settings → Storage to understand what is taking up space. Remove apps you no longer use, review large downloads, back up important photos before deleting anything, and clear app cache only when needed. Menu names may differ by phone model.">Read guide →</button></div></article>
-    <article class="post" data-category="Technology" data-search="strong passwords online safety technology"><div class="post-top">🔐</div><div class="post-body"><div class="tag">Technology</div><h3>How to create stronger passwords</h3><p>Practical account-safety habits for your everyday online life.</p><button class="read" data-title="How to create stronger passwords" data-content="Use a long, unique password for every important account. A password manager can help you create and store them. Turn on two-step verification wherever available, never share one-time codes, and be careful with links asking you to sign in.">Read guide →</button></div></article>
-    <article class="post" data-category="Education" data-search="study plan education learning students"><div class="post-top">📚</div><div class="post-body"><div class="tag">Education</div><h3>A simple study plan for consistent learning</h3><p>Break a big subject into small sessions and review regularly.</p><button class="read" data-title="A simple study plan for consistent learning" data-content="Choose one clear goal for each study session. Study in focused blocks, take short breaks, and finish by writing a few points from memory. Review those notes the next day. Adjust the plan to your school, exam and personal schedule.">Read guide →</button></div></article>
-    <article class="post" data-category="Online Tools" data-search="online tools documents pdf productivity"><div class="post-top">🧰</div><div class="post-body"><div class="tag">Online Tools</div><h3>Useful online tools for everyday tasks</h3><p>Discover tools for documents, learning and getting organised.</p><button class="read" data-title="Useful online tools for everyday tasks" data-content="Before using an online tool, check who operates it, what data it collects, and whether your files are public or private. Prefer trusted services for sensitive documents. Save important work and read the terms before uploading personal information.">Read guide →</button></div></article>
-    <article class="post" data-category="Technology" data-search="website internet browser basics technology"><div class="post-top">🌍</div><div class="post-body"><div class="tag">Technology</div><h3>Website, browser and internet: what is the difference?</h3><p>A beginner-friendly explanation of three everyday tech terms.</p><button class="read" data-title="Website, browser and internet: what is the difference?" data-content="The internet is the global network connecting devices. A browser is an app such as Chrome that helps you access online content. A website is a collection of related pages you visit through a browser.">Read guide →</button></div></article>
-    <article class="post" data-category="Mobile Tips" data-search="mobile privacy permissions settings"><div class="post-top">🛡️</div><div class="post-body"><div class="tag">Mobile Tips</div><h3>Review app permissions on your phone</h3><p>Check which apps can access your camera, microphone and location.</p><button class="read" data-title="Review app permissions on your phone" data-content="Open your phone Settings and find Privacy or Permission Manager. Review camera, microphone, contacts and location access. Allow permissions only when they make sense for the app's features. Settings labels vary by Android version and device.">Read guide →</button></div></article>
+</section>
+
+<section id="categories">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Explore Topics</div>
+      <h2>What Do You Want To Learn?</h2>
+      <p>Choose your favourite learning category.</p>
+    </div>
+
+    <div class="categories">
+
+      <a class="category" href="#articles" data-cat="Technology">
+        <div class="icon">💻</div>
+        <h3>Technology</h3>
+        <p>Apps, websites and digital updates.</p>
+      </a>
+
+      <a class="category" href="#articles" data-cat="Mobile Tips">
+        <div class="icon">📱</div>
+        <h3>Mobile Tips</h3>
+        <p>Android tricks and phone settings.</p>
+      </a>
+
+      <a class="category" href="#articles" data-cat="Education">
+        <div class="icon">🎓</div>
+        <h3>Education</h3>
+        <p>Study guides and learning resources.</p>
+      </a>
+
+      <a class="category" href="#articles" data-cat="Online Tools">
+        <div class="icon">🌐</div>
+        <h3>Online Tools</h3>
+        <p>Useful websites and online tools.</p>
+      </a>
+
+    </div>
   </div>
-</div></section>
-<section class="about" id="about"><div class="wrap about-grid">
-  <div><div class="kicker">About us</div><h2>Technology made simple for everyone.</h2><p>ER Sachin Techin is a learning space for curious minds. Our goal is to explain useful technology and education topics in clear, beginner-friendly language.</p><p>We believe digital knowledge should be easy to understand and practical to use.</p></div>
-  <div class="about-box"><h3>What you can expect</h3><ul class="checks"><li>Easy Hindi and English explanations</li><li>Step-by-step mobile and tech guides</li><li>Useful education resources</li><li>Responsible digital-safety tips</li></ul></div>
-</div></section>
-<section id="contact"><div class="wrap"><div class="cta"><div><h2>Keep learning with us!</h2><p>Have a topic suggestion? We would love to hear it.</p></div><a class="btn primary" href="mailto:YOUR_EMAIL@example.com?subject=ER%20Sachin%20Techin%20-%20Suggestion">Email us</a></div><p style="color:#718096;font-size:.82rem;margin-top:12px">Before publishing, replace YOUR_EMAIL@example.com in this file with your contact email.</p></div></section>
+</section>
+
+<section class="articles-section" id="articles">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="eyebrow">Latest Knowledge</div>
+      <h2>Featured Articles</h2>
+      <p>Explore useful guides and improve your knowledge.</p>
+    </div>
+
+    <div class="search-area">
+      <input id="search" type="search" placeholder="🔍 Search articles...">
+
+      <select id="filter">
+        <option value="All">All Categories</option>
+        <option>Technology</option>
+        <option>Mobile Tips</option>
+        <option>Education</option>
+        <option>Online Tools</option>
+      </select>
+    </div>
+
+    <div class="article-grid" id="articleGrid">
+
+      <article class="article" data-category="Mobile Tips" data-words="android phone storage">
+        <div class="article-image">📱</div>
+        <div class="article-content">
+          <span class="tag">Mobile Tips</span>
+          <h3>5 Ways To Make Your Android Phone Better</h3>
+          <p>Useful tips to manage your smartphone easily.</p>
+          <button class="read-btn" data-title="5 Android Phone Tips" data-body="1. Remove unused apps. 2. Keep your software updated. 3. Review app permissions. 4. Back up important photos. 5. Keep enough storage space.">Read More →</button>
+        </div>
+      </article>
+
+      <article class="article" data-category="Technology" data-words="password security internet">
+        <div class="article-image">🔐</div>
+        <div class="article-content">
+          <span class="tag">Technology</span>
+          <h3>How To Create A Strong Password</h3>
+          <p>Learn simple ways to protect your online accounts.</p>
+          <button class="read-btn" data-title="Create Strong Passwords" data-body="Use a long and unique password for every account. Enable two-step verification. Never share your OTP or password with anyone. Avoid clicking suspicious links.">Read More →</button>
+        </div>
+      </article>
+
+      <article class="article" data-category="Education" data-words="study plan students learning">
+        <div class="article-image">📚</div>
+        <div class="article-content">
+          <span class="tag">Education</span>
+          <h3>How To Make A Daily Study Plan</h3>
+          <p>Build better study habits with a simple routine.</p>
+          <button class="read-btn" data-title="Daily Study Plan" data-body="Set a daily learning goal. Divide subjects into small sessions. Take short breaks. Revise what you learned and check your progress every week.">Read More →</button>
+        </div>
+      </article>
+
+      <article class="article" data-category="Online Tools" data-words="online websites tools documents">
+        <div class="article-image">🌐</div>
+        <div class="article-content">
+          <span class="tag">Online Tools</span>
+          <h3>Useful Online Tools For Everyone</h3>
+          <p>Discover helpful tools for everyday digital work.</p>
+          <button class="read-btn" data-title="Useful Online Tools" data-body="Online tools can help you edit documents, convert files, learn new skills and create designs. Always check the privacy policy before uploading personal documents.">Read More →</button>
+        </div>
+      </article>
+
+      <article class="article" data-category="Technology" data-words="website internet browser basics">
+        <div class="article-image">🌍</div>
+        <div class="article-content">
+          <span class="tag">Technology</span>
+          <h3>What Is A Website And Browser?</h3>
+          <p>Understand the basics of the internet.</p>
+          <button class="read-btn" data-title="Website And Browser" data-body="The internet connects devices around the world. A browser like Chrome helps you visit websites. A website contains pages and information that you can access online.">Read More →</button>
+        </div>
+      </article>
+
+      <article class="article" data-category="Mobile Tips" data-words="android privacy permissions">
+        <div class="article-image">🛡️</div>
+        <div class="article-content">
+          <span class="tag">Mobile Tips</span>
+          <h3>Check App Permissions On Android</h3>
+          <p>Learn to control your phone's privacy settings.</p>
+          <button class="read-btn" data-title="Android App Permissions" data-body="Open Settings and find Privacy or Permission Manager. Review camera, microphone, contacts and location permissions. Give access only when necessary.">Read More →</button>
+        </div>
+      </article>
+
+    </div>
+    <p id="empty" style="display:none;text-align:center;color:#64758a;">No articles found.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+
+    <div>
+      <div class="eyebrow">About Us</div>
+      <h2>Knowledge That Helps You Grow.</h2>
+      <p>
+        ER Sachin Techin is a digital learning platform
+        created to make technology and education simple
+        and useful for everyone.
+      </p>
+      <p>
+        Our mission is to share practical knowledge
+        through easy Hindi and English explanations.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h3>What You Can Learn</h3>
+      <ul>
+        <li>Easy technology explanations</li>
+        <li>Mobile tips and Android guides</li>
+        <li>Education and study resources</li>
+        <li>Useful online tools</li>
+        <li>Digital safety and awareness</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container youtube">
+    <div>
+      <div class="eyebrow" style="color:#ffc66b">Watch And Learn</div>
+      <h2>Learn With ER Sachin Techin</h2>
+      <p>Technology tutorials, mobile tips and educational videos.</p>
+    </div>
+
+    <a class="btn youtube-btn"
+       href="https://www.youtube.com/"
+       target="_blank"
+       rel="noopener">
+       ▶ Visit YouTube
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact">
+    <div>
+      <div class="eyebrow">Contact Us</div>
+      <h2>Have A Question?</h2>
+      <p>Send your topic suggestions and feedback.</p>
+    </div>
+
+    <a class="btn"
+       href="mailto:YOUR_EMAIL@example.com">
+       ✉ Contact Us
+    </a>
+  </div>
+</section>
+
 </main>
-<footer><div class="wrap foot"><div><strong>ER SACHIN TECHIN</strong><br><small>Learn • Explore • Grow</small></div><div>© <span id="year"></span> ER Sachin Techin. All rights reserved.</div></div></footer>
-<div class="modal" id="articleModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button class="close" id="closeModal" aria-label="Close">×</button><div class="kicker">Article preview</div><h2 id="modalTitle"></h2><p id="modalContent"></p></div></div>
+
+<footer>
+  <div class="container footer-content">
+    <strong>ER SACHIN TECHIN</strong>
+    <span>Learn • Explore • Grow</span>
+    <small>© <span id="year"></span> ER Sachin Techin. All rights reserved.</small>
+  </div>
+</footer>
+
+<!-- ARTICLE POPUP -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="close" id="close">×</button>
+    <div class="eyebrow">Learning Guide</div>
+    <h2 id="modalTitle"></h2>
+    <p id="modalBody"></p>
+  </div>
+</div>
+
 <script>
-const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
-menuBtn.addEventListener('click',()=>nav.classList.toggle('show'));
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('show')));
-const search=document.getElementById('searchInput'),filter=document.getElementById('categoryFilter'),cards=[...document.querySelectorAll('.post')],grid=document.getElementById('postGrid');
-function applyFilters(){let q=search.value.toLowerCase().trim(),cat=filter.value,n=0;cards.forEach(c=>{let ok=(cat==='All'||c.dataset.category===cat)&&(c.dataset.search+' '+c.innerText).toLowerCase().includes(q);c.style.display=ok?'flex':'none';if(ok)n++});let old=grid.querySelector('.empty');if(old)old.remove();if(!n){let e=document.createElement('div');e.className='empty';e.textContent='No articles found. Try another search.';grid.appendChild(e)}}
-search.addEventListener('input',applyFilters);filter.addEventListener('change',applyFilters);
-document.querySelectorAll('[data-pick]').forEach(a=>a.addEventListener('click',()=>{filter.value=a.dataset.pick;applyFilters()}));
-const modal=document.getElementById('articleModal');document.querySelectorAll('.read').forEach(b=>b.addEventListener('click',()=>{document.getElementById('modalTitle').textContent=b.dataset.title;document.getElementById('modalContent').textContent=b.dataset.content;modal.classList.add('open')}));
-function closeModal(){modal.classList.remove('open')}document.getElementById('closeModal').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-document.getElementById('year').textContent=new Date().getFullYear();
+// Search and category filter
+const cards = [...document.querySelectorAll('.article')];
+const search = document.getElementById('search');
+const filter = document.getElementById('filter');
+const empty = document.getElementById('empty');
+
+function updateArticles() {
+  let count = 0;
+
+  cards.forEach(card => {
+    const category = card.dataset.category;
+    const words = (card.dataset.words + ' ' + card.innerText).toLowerCase();
+
+    const categoryMatch =
+      filter.value === 'All' || category === filter.value;
+
+    const searchMatch =
+      words.includes(search.value.toLowerCase().trim());
+
+    const show = categoryMatch && searchMatch;
+
+    card.style.display = show ? '' : 'none';
+
+    if (show) count++;
+  });
+
+  empty.style.display = count ? 'none' : 'block';
+}
+
+search.addEventListener('input', updateArticles);
+filter.addEventListener('change', updateArticles);
+
+// Category buttons
+document.querySelectorAll('[data-cat]').forEach(link => {
+  link.addEventListener('click', () => {
+    filter.value = link.dataset.cat;
+    updateArticles();
+  });
+});
+
+// Read more popup
+const modal = document.getElementById('modal');
+
+document.querySelectorAll('.read-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    document.getElementById('modalTitle').textContent =
+      button.dataset.title;
+
+    document.getElementById('modalBody').textContent =
+      button.dataset.body;
+
+    modal.classList.add('active');
+  });
+});
+
+function closeModal() {
+  modal.classList.remove('active');
+}
+
+document.getElementById('close').addEventListener('click', closeModal);
+
+modal.addEventListener('click', event => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeModal();
+});
+
+// Automatic copyright year
+document.getElementById('year').textContent =
+  new Date().getFullYear();
 </script>
-</body></html>
+
+</body>
+</html>
