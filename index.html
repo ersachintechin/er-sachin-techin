@@ -3,411 +3,489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ER Sachin Techin - Learn technology, mobile tips, education and digital skills in Hindi and English.">
+<meta name="description" content="ER Sachin Techin - Technology, mobile tips, education and digital skills in Hindi and English.">
 <meta name="theme-color" content="#071b35">
 <title>ER Sachin Techin | Learn • Explore • Grow</title>
 
 <style>
 :root {
-  --navy:#071b35;
-  --blue:#1769aa;
-  --gold:#ffc66b;
-  --light:#f3f7fc;
-  --white:#fff;
-  --text:#172b43;
-  --muted:#65758a;
+  --bg: #f3f7fc;
+  --surface: #ffffff;
+  --text: #172b43;
+  --muted: #65758a;
+  --navy: #071b35;
+  --blue: #1769aa;
+  --gold: #ffc66b;
+  --border: #e1e9f2;
+  --hero: linear-gradient(120deg,#071b35,#145b91);
 }
 
-* { box-sizing:border-box; }
+body.dark-mode {
+  --bg: #101827;
+  --surface: #1b2638;
+  --text: #f1f5fa;
+  --muted: #b1bfd0;
+  --navy: #090f1c;
+  --blue: #65b5ff;
+  --border: #344258;
+  --hero: linear-gradient(120deg,#080e1b,#142d4b);
+}
 
-html { scroll-behavior:smooth; }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--light);
-  color:var(--text);
-  line-height:1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background .3s, color .3s;
 }
 
-a { text-decoration:none; color:inherit; }
+a { text-decoration: none; color: inherit; }
+
+button, input, select { font: inherit; }
 
 .container {
-  width:92%;
-  max-width:1120px;
-  margin:auto;
+  width: 92%;
+  max-width: 1120px;
+  margin: auto;
 }
 
 /* HEADER */
+
 header {
-  background:var(--navy);
-  color:white;
-  position:sticky;
-  top:0;
-  z-index:100;
+  background: var(--navy);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 15px #0002;
 }
 
 .nav {
-  min-height:72px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
 }
 
 .logo {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:17px;
-  font-weight:900;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 900;
 }
 
 .logo-icon {
-  width:43px;
-  height:43px;
-  background:var(--gold);
-  color:var(--navy);
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  font-size:23px;
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  color: #071b35;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 24px;
 }
 
 .logo small {
-  display:block;
-  font-size:10px;
-  color:#b8d4ef;
-  letter-spacing:2px;
+  display: block;
+  font-size: 10px;
+  color: #b8d4ef;
+  letter-spacing: 2px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 nav {
-  display:flex;
-  gap:20px;
-  align-items:center;
-  flex-wrap:wrap;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav a {
-  font-size:14px;
-  font-weight:bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-nav a:hover { color:var(--gold); }
+nav a:hover { color: var(--gold); }
+
+.theme-btn {
+  border: 1px solid #ffffff60;
+  background: #ffffff15;
+  color: white;
+  padding: 9px 13px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.theme-btn:hover { background: #ffffff30; }
 
 /* HERO */
+
 .hero {
-  background:linear-gradient(120deg,#071b35,#145b91);
-  color:white;
-  padding:85px 0;
+  background: var(--hero);
+  color: white;
+  padding: 85px 0;
 }
 
 .hero-grid {
-  display:grid;
-  grid-template-columns:1.4fr .8fr;
-  align-items:center;
-  gap:35px;
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  align-items: center;
+  gap: 35px;
 }
 
 .label {
-  color:var(--gold);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 h1 {
-  font-size:clamp(38px,6vw,65px);
-  line-height:1.12;
-  margin:18px 0;
+  font-size: clamp(38px,6vw,65px);
+  line-height: 1.12;
+  margin: 18px 0;
 }
 
-h1 span { color:var(--gold); }
+h1 span { color: var(--gold); }
 
 .hero p {
-  color:#d5e7f7;
-  max-width:600px;
-  font-size:17px;
+  color: #d5e7f7;
+  max-width: 600px;
+  font-size: 17px;
 }
 
 .btn {
-  display:inline-block;
-  background:var(--gold);
-  color:#132942;
-  padding:13px 20px;
-  border-radius:9px;
-  font-weight:bold;
-  margin:12px 8px 0 0;
+  display: inline-block;
+  background: var(--gold);
+  color: #132942;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+  margin: 12px 8px 0 0;
+  transition: .2s;
 }
 
-.btn:hover { opacity:.85; }
+.btn:hover { transform: translateY(-3px); }
 
 .btn-outline {
-  border:1px solid white;
-  color:white;
-  background:transparent;
+  border: 1px solid white;
+  color: white;
+  background: transparent;
 }
 
 .hero-card {
-  background:#ffffff15;
-  border:1px solid #ffffff40;
-  padding:30px;
-  border-radius:22px;
+  background: #ffffff15;
+  border: 1px solid #ffffff40;
+  padding: 30px;
+  border-radius: 22px;
 }
 
-.hero-card .bulb { font-size:55px; }
+.bulb { font-size: 55px; }
 
 /* COMMON */
-section { padding:65px 0; }
 
-.section-title { margin-bottom:28px; }
+section { padding: 65px 0; }
+
+.section-title { margin-bottom: 28px; }
 
 .section-title h2 {
-  font-size:clamp(27px,4vw,38px);
-  margin:5px 0;
+  font-size: clamp(27px,4vw,38px);
+  margin: 5px 0;
 }
 
-.section-title p { color:var(--muted); }
+.section-title p { color: var(--muted); }
 
 .eyebrow {
-  color:var(--blue);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
-  text-transform:uppercase;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* CATEGORIES */
+
 .categories {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:17px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 17px;
 }
 
 .category {
-  background:white;
-  padding:23px;
-  border-radius:16px;
-  border:1px solid #e1e9f2;
-  transition:.2s;
+  display: block;
+  background: var(--surface);
+  padding: 23px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: .2s;
 }
 
 .category:hover {
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px #071b3515;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #071b3515;
 }
 
-.category .icon { font-size:35px; }
+.category .icon { font-size: 35px; }
 
-.category h3 { margin:8px 0 3px; }
+.category h3 { margin: 8px 0 3px; }
 
 .category p {
-  color:var(--muted);
-  font-size:14px;
-  margin:0;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
 }
 
 /* ARTICLES */
-.articles-section { background:white; }
+
+.articles-section {
+  background: var(--surface);
+}
 
 .search-area {
-  display:flex;
-  gap:12px;
-  margin-bottom:25px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
 }
 
 .search-area input,
 .search-area select {
-  padding:14px;
-  border:1px solid #dce5ef;
-  border-radius:9px;
-  font-size:15px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.search-area input { flex:1; min-width:0; }
+.search-area input {
+  flex: 1;
+  min-width: 0;
+}
 
 .article-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
 }
 
 .article {
-  border:1px solid #e1e9f2;
-  border-radius:15px;
-  overflow:hidden;
-  background:white;
-  transition:.2s;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--surface);
+  transition: .2s;
 }
 
 .article:hover {
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px #071b3512;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #071b3512;
 }
 
 .article-image {
-  height:130px;
-  background:linear-gradient(135deg,#dceeff,#f1f7ff);
-  display:grid;
-  place-items:center;
-  font-size:48px;
+  height: 145px;
+  background: linear-gradient(135deg,#dceeff,#f1f7ff);
+  display: grid;
+  place-items: center;
+  font-size: 52px;
 }
 
-.article-content { padding:20px; }
+.article-content { padding: 20px; }
 
 .tag {
-  color:var(--blue);
-  font-size:11px;
-  font-weight:bold;
-  text-transform:uppercase;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .article h3 {
-  font-size:19px;
-  line-height:1.35;
+  font-size: 19px;
+  line-height: 1.35;
 }
 
 .article p {
-  font-size:14px;
-  color:var(--muted);
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .read-btn {
-  border:0;
-  background:none;
-  padding:10px 0 0;
-  color:var(--blue);
-  font-weight:bold;
-  font-size:15px;
-  cursor:pointer;
+  border: 0;
+  background: none;
+  padding: 10px 0 0;
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
 }
 
+.read-btn:hover { text-decoration: underline; }
+
 /* ABOUT */
+
 .about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
 }
 
 .about-card {
-  background:white;
-  border-radius:17px;
-  padding:25px;
-  border:1px solid #e1e9f2;
+  background: var(--surface);
+  border-radius: 17px;
+  padding: 25px;
+  border: 1px solid var(--border);
 }
 
-.about-card li { margin:10px 0; }
+.about-card li { margin: 10px 0; }
 
 /* YOUTUBE */
+
 .youtube {
-  background:var(--navy);
-  color:white;
-  border-radius:20px;
-  padding:35px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+  background: var(--navy);
+  color: white;
+  border-radius: 20px;
+  padding: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-.youtube p { color:#c6d8e9; }
+.youtube p { color: #c6d8e9; }
 
 .youtube-btn {
-  background:#ff424d;
-  color:white;
+  background: #ff424d;
+  color: white;
 }
 
 /* CONTACT */
+
 .contact {
-  background:#e4f0fc;
-  padding:30px;
-  border-radius:18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 /* FOOTER */
+
 footer {
-  background:#061326;
-  color:#d6e3f0;
-  padding:28px 0;
+  background: #061326;
+  color: #d6e3f0;
+  padding: 28px 0;
 }
 
 .footer-content {
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* ARTICLE MODAL */
+/* MODAL */
+
 .modal {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000b;
-  z-index:200;
-  padding:18px;
-  align-items:center;
-  justify-content:center;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  z-index: 200;
+  padding: 18px;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal.active { display:flex; }
+.modal.active { display: flex; }
 
 .modal-content {
-  background:white;
-  width:100%;
-  max-width:550px;
-  padding:28px;
-  border-radius:17px;
-  position:relative;
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 17px;
+  position: relative;
 }
 
 .close {
-  position:absolute;
-  top:12px;
-  right:15px;
-  border:0;
-  background:#eaf0f6;
-  padding:8px 13px;
-  border-radius:50%;
-  font-size:20px;
-  cursor:pointer;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: 0;
+  background: var(--bg);
+  color: var(--text);
+  padding: 8px 13px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* MOBILE */
-@media(max-width:760px) {
-  .hero-grid,.about-grid { grid-template-columns:1fr; }
-  .categories { grid-template-columns:repeat(2,1fr); }
-  .article-grid { grid-template-columns:repeat(2,1fr); }
-  nav { gap:12px; }
+
+@media(max-width:850px) {
+  .hero-grid, .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories { grid-template-columns: repeat(2,1fr); }
+
+  .article-grid { grid-template-columns: repeat(2,1fr); }
 }
 
-@media(max-width:520px) {
+@media(max-width:600px) {
   .nav {
-    padding:12px 0;
-    flex-direction:column;
-    align-items:flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  nav { gap:12px; }
-
-  .hero { padding:55px 0; }
-
-  .categories,.article-grid { grid-template-columns:1fr; }
-
-  .search-area { flex-direction:column; }
-
-  .youtube,.contact {
-    flex-direction:column;
-    align-items:flex-start;
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
   }
 
-  section { padding:45px 0; }
+  nav { gap: 12px; }
+
+  nav a { font-size: 12px; }
+
+  .hero { padding: 55px 0; }
+
+  .categories, .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-area {
+    flex-direction: column;
+  }
+
+  .youtube, .contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section { padding: 45px 0; }
 }
+
 </style>
 </head>
 
@@ -415,20 +493,30 @@ footer {
 
 <header>
   <div class="container nav">
+
     <a class="logo" href="#home">
       <span class="logo-icon">S</span>
-      <span>ER SACHIN TECHIN
+      <span>
+        ER SACHIN TECHIN
         <small>LEARN • EXPLORE • GROW</small>
       </span>
     </a>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#articles">Articles</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-right">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Topics</a>
+        <a href="#articles">Articles</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="theme-btn" id="darkModeBtn"
+        type="button" aria-label="Switch color theme">
+        🌙 Dark Mode
+      </button>
+    </div>
+
   </div>
 </header>
 
@@ -436,6 +524,7 @@ footer {
 
 <section class="hero" id="home">
   <div class="container hero-grid">
+
     <div>
       <span class="label">WELCOME TO YOUR DIGITAL WORLD</span>
 
@@ -462,11 +551,13 @@ footer {
         and grow with technology.
       </p>
     </div>
+
   </div>
 </section>
 
 <section id="categories">
   <div class="container">
+
     <div class="section-title">
       <div class="eyebrow">Explore Topics</div>
       <h2>What Do You Want To Learn?</h2>
@@ -513,9 +604,10 @@ footer {
     </div>
 
     <div class="search-area">
-      <input id="search" type="search" placeholder="🔍 Search articles...">
+      <input id="search" type="search"
+        placeholder="🔍 Search articles..." aria-label="Search articles">
 
-      <select id="filter">
+      <select id="filter" aria-label="Filter articles">
         <option value="All">All Categories</option>
         <option>Technology</option>
         <option>Mobile Tips</option>
@@ -526,68 +618,102 @@ footer {
 
     <div class="article-grid" id="articleGrid">
 
-      <article class="article" data-category="Mobile Tips" data-words="android phone storage">
+      <article class="article" data-category="Mobile Tips"
+        data-words="android phone storage">
+
         <div class="article-image">📱</div>
         <div class="article-content">
           <span class="tag">Mobile Tips</span>
           <h3>5 Ways To Make Your Android Phone Better</h3>
           <p>Useful tips to manage your smartphone easily.</p>
-          <button class="read-btn" data-title="5 Android Phone Tips" data-body="1. Remove unused apps. 2. Keep your software updated. 3. Review app permissions. 4. Back up important photos. 5. Keep enough storage space.">Read More →</button>
+          <button class="read-btn" data-title="5 Android Phone Tips"
+            data-body="1. Remove unused apps. 2. Keep your software updated. 3. Review app permissions. 4. Back up important photos. 5. Keep enough storage space.">
+            Read More →
+          </button>
         </div>
       </article>
 
-      <article class="article" data-category="Technology" data-words="password security internet">
+      <article class="article" data-category="Technology"
+        data-words="password security internet">
+
         <div class="article-image">🔐</div>
         <div class="article-content">
           <span class="tag">Technology</span>
           <h3>How To Create A Strong Password</h3>
           <p>Learn simple ways to protect your online accounts.</p>
-          <button class="read-btn" data-title="Create Strong Passwords" data-body="Use a long and unique password for every account. Enable two-step verification. Never share your OTP or password with anyone. Avoid clicking suspicious links.">Read More →</button>
+          <button class="read-btn" data-title="Create Strong Passwords"
+            data-body="Use a long and unique password for every account. Enable two-step verification. Never share your OTP or password with anyone. Avoid clicking suspicious links.">
+            Read More →
+          </button>
         </div>
       </article>
 
-      <article class="article" data-category="Education" data-words="study plan students learning">
+      <article class="article" data-category="Education"
+        data-words="study plan students learning">
+
         <div class="article-image">📚</div>
         <div class="article-content">
           <span class="tag">Education</span>
           <h3>How To Make A Daily Study Plan</h3>
           <p>Build better study habits with a simple routine.</p>
-          <button class="read-btn" data-title="Daily Study Plan" data-body="Set a daily learning goal. Divide subjects into small sessions. Take short breaks. Revise what you learned and check your progress every week.">Read More →</button>
+          <button class="read-btn" data-title="Daily Study Plan"
+            data-body="Set a daily learning goal. Divide subjects into small sessions. Take short breaks. Revise what you learned and check your progress every week.">
+            Read More →
+          </button>
         </div>
       </article>
 
-      <article class="article" data-category="Online Tools" data-words="online websites tools documents">
+      <article class="article" data-category="Online Tools"
+        data-words="online websites tools documents">
+
         <div class="article-image">🌐</div>
         <div class="article-content">
           <span class="tag">Online Tools</span>
           <h3>Useful Online Tools For Everyone</h3>
           <p>Discover helpful tools for everyday digital work.</p>
-          <button class="read-btn" data-title="Useful Online Tools" data-body="Online tools can help you edit documents, convert files, learn new skills and create designs. Always check the privacy policy before uploading personal documents.">Read More →</button>
+          <button class="read-btn" data-title="Useful Online Tools"
+            data-body="Online tools can help you edit documents, convert files, learn new skills and create designs. Always check the privacy policy before uploading personal documents.">
+            Read More →
+          </button>
         </div>
       </article>
 
-      <article class="article" data-category="Technology" data-words="website internet browser basics">
+      <article class="article" data-category="Technology"
+        data-words="website internet browser basics">
+
         <div class="article-image">🌍</div>
         <div class="article-content">
           <span class="tag">Technology</span>
           <h3>What Is A Website And Browser?</h3>
           <p>Understand the basics of the internet.</p>
-          <button class="read-btn" data-title="Website And Browser" data-body="The internet connects devices around the world. A browser like Chrome helps you visit websites. A website contains pages and information that you can access online.">Read More →</button>
+          <button class="read-btn" data-title="Website And Browser"
+            data-body="The internet connects devices around the world. A browser like Chrome helps you visit websites. A website contains pages and information that you can access online.">
+            Read More →
+          </button>
         </div>
       </article>
 
-      <article class="article" data-category="Mobile Tips" data-words="android privacy permissions">
+      <article class="article" data-category="Mobile Tips"
+        data-words="android privacy permissions">
+
         <div class="article-image">🛡️</div>
         <div class="article-content">
           <span class="tag">Mobile Tips</span>
           <h3>Check App Permissions On Android</h3>
           <p>Learn to control your phone's privacy settings.</p>
-          <button class="read-btn" data-title="Android App Permissions" data-body="Open Settings and find Privacy or Permission Manager. Review camera, microphone, contacts and location permissions. Give access only when necessary.">Read More →</button>
+          <button class="read-btn" data-title="Android App Permissions"
+            data-body="Open Settings and find Privacy or Permission Manager. Review camera, microphone, contacts and location permissions. Give access only when necessary.">
+            Read More →
+          </button>
         </div>
       </article>
 
     </div>
-    <p id="empty" style="display:none;text-align:center;color:#64758a;">No articles found.</p>
+
+    <p id="empty" style="display:none;text-align:center;color:var(--muted);">
+      No articles found.
+    </p>
+
   </div>
 </section>
 
@@ -597,11 +723,13 @@ footer {
     <div>
       <div class="eyebrow">About Us</div>
       <h2>Knowledge That Helps You Grow.</h2>
+
       <p>
         ER Sachin Techin is a digital learning platform
         created to make technology and education simple
         and useful for everyone.
       </p>
+
       <p>
         Our mission is to share practical knowledge
         through easy Hindi and English explanations.
@@ -624,33 +752,37 @@ footer {
 
 <section>
   <div class="container youtube">
+
     <div>
-      <div class="eyebrow" style="color:#ffc66b">Watch And Learn</div>
+      <div class="eyebrow" style="color:#ffc66b">
+        Watch And Learn
+      </div>
       <h2>Learn With ER Sachin Techin</h2>
       <p>Technology tutorials, mobile tips and educational videos.</p>
     </div>
 
     <a class="btn youtube-btn"
-       href="https://www.youtube.com/"
-       target="_blank"
-       rel="noopener">
-       ▶ Visit YouTube
+      href="https://www.youtube.com/"
+      target="_blank" rel="noopener">
+      ▶ Visit YouTube
     </a>
+
   </div>
 </section>
 
 <section id="contact">
   <div class="container contact">
+
     <div>
       <div class="eyebrow">Contact Us</div>
       <h2>Have A Question?</h2>
       <p>Send your topic suggestions and feedback.</p>
     </div>
 
-    <a class="btn"
-       href="mailto:YOUR_EMAIL@example.com">
-       ✉ Contact Us
+    <a class="btn" href="mailto:YOUR_EMAIL@example.com">
+      ✉ Contact Us
     </a>
+
   </div>
 </section>
 
@@ -665,9 +797,10 @@ footer {
 </footer>
 
 <!-- ARTICLE POPUP -->
+
 <div class="modal" id="modal">
   <div class="modal-content">
-    <button class="close" id="close">×</button>
+    <button class="close" id="close" aria-label="Close popup">×</button>
     <div class="eyebrow">Learning Guide</div>
     <h2 id="modalTitle"></h2>
     <p id="modalBody"></p>
@@ -675,78 +808,128 @@ footer {
 </div>
 
 <script>
-// Search and category filter
-const cards = [...document.querySelectorAll('.article')];
-const search = document.getElementById('search');
-const filter = document.getElementById('filter');
-const empty = document.getElementById('empty');
+
+// DARK MODE AND LIGHT MODE
+
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+function applyTheme(theme) {
+  document.body.classList.toggle("dark-mode", theme === "dark");
+
+  darkModeBtn.textContent =
+    theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+  document.querySelector('meta[name="theme-color"]')
+    .setAttribute("content",
+      theme === "dark" ? "#101827" : "#071b35");
+}
+
+let savedTheme = "light";
+
+try {
+  savedTheme = localStorage.getItem("sachinTheme") || "light";
+} catch (error) {}
+
+applyTheme(savedTheme);
+
+darkModeBtn.addEventListener("click", () => {
+  const newTheme =
+    document.body.classList.contains("dark-mode")
+      ? "light"
+      : "dark";
+
+  applyTheme(newTheme);
+
+  try {
+    localStorage.setItem("sachinTheme", newTheme);
+  } catch (error) {}
+});
+
+
+// SEARCH AND CATEGORY FILTER
+
+const cards = [...document.querySelectorAll(".article")];
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const empty = document.getElementById("empty");
 
 function updateArticles() {
   let count = 0;
 
   cards.forEach(card => {
     const category = card.dataset.category;
-    const words = (card.dataset.words + ' ' + card.innerText).toLowerCase();
+
+    const words =
+      (card.dataset.words + " " + card.innerText).toLowerCase();
 
     const categoryMatch =
-      filter.value === 'All' || category === filter.value;
+      filter.value === "All" || category === filter.value;
 
     const searchMatch =
       words.includes(search.value.toLowerCase().trim());
 
     const show = categoryMatch && searchMatch;
 
-    card.style.display = show ? '' : 'none';
+    card.style.display = show ? "" : "none";
 
     if (show) count++;
   });
 
-  empty.style.display = count ? 'none' : 'block';
+  empty.style.display = count ? "none" : "block";
 }
 
-search.addEventListener('input', updateArticles);
-filter.addEventListener('change', updateArticles);
+search.addEventListener("input", updateArticles);
+filter.addEventListener("change", updateArticles);
 
-// Category buttons
-document.querySelectorAll('[data-cat]').forEach(link => {
-  link.addEventListener('click', () => {
+
+// CATEGORY BUTTONS
+
+document.querySelectorAll("[data-cat]").forEach(link => {
+  link.addEventListener("click", () => {
     filter.value = link.dataset.cat;
     updateArticles();
   });
 });
 
-// Read more popup
-const modal = document.getElementById('modal');
 
-document.querySelectorAll('.read-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    document.getElementById('modalTitle').textContent =
+// READ MORE POPUP
+
+const modal = document.getElementById("modal");
+
+document.querySelectorAll(".read-btn").forEach(button => {
+  button.addEventListener("click", () => {
+
+    document.getElementById("modalTitle").textContent =
       button.dataset.title;
 
-    document.getElementById('modalBody').textContent =
+    document.getElementById("modalBody").textContent =
       button.dataset.body;
 
-    modal.classList.add('active');
+    modal.classList.add("active");
   });
 });
 
 function closeModal() {
-  modal.classList.remove('active');
+  modal.classList.remove("active");
 }
 
-document.getElementById('close').addEventListener('click', closeModal);
+document.getElementById("close")
+  .addEventListener("click", closeModal);
 
-modal.addEventListener('click', event => {
+modal.addEventListener("click", event => {
   if (event.target === modal) closeModal();
 });
 
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') closeModal();
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeModal();
 });
 
-// Automatic copyright year
-document.getElementById('year').textContent =
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
   new Date().getFullYear();
+
 </script>
 
 </body>
